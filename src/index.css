@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-teal-brand: #0B7767;
+  --color-teal-dark: #074F44;
+  --color-teal-light: #0D8D7B;
+  --color-lavender-brand: #F0EAFF;
+  --color-lavender-light: #F8F5FF;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Custom transitions and utility animations */
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blur-nav {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-blur-nav {
+  backdrop-filter: blur(12px);
+  background-color: rgba(11, 119, 103, 0.8);
+}
