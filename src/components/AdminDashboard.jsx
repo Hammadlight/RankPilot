@@ -5,7 +5,7 @@ import {
   Calendar, Layers, Database, UserCheck, AlertCircle, RefreshCw
 } from 'lucide-react';
 
-const AdminDashboard = ({ user, handleLogout }) => {
+const AdminDashboard = ({ user, setView, handleLogout }) => {
   const [profiles, setProfiles] = useState([]);
   const [allDocs, setAllDocs] = useState([]);
   const [activeTab, setActiveTab] = useState('users'); // 'users' or 'documents'
@@ -80,14 +80,17 @@ const AdminDashboard = ({ user, handleLogout }) => {
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm">
         <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+          <button 
+            onClick={() => setView('landing')}
+            className="flex items-center gap-2.5 group cursor-pointer hover:opacity-80 transition-opacity focus:outline-none"
+          >
             <div className="p-2 rounded-xl bg-teal-brand text-white shadow-sm shadow-teal-brand/10">
               <ShieldCheck size={20} className="stroke-[2.5]" />
             </div>
             <span className="font-bold text-xl tracking-tight text-gray-900">
               RankPilot <span className="text-teal-brand">Admin Console</span>
             </span>
-          </div>
+          </button>
 
           <div className="flex items-center gap-4">
             <button 

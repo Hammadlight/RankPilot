@@ -5,7 +5,7 @@ import {
   BookOpen, Folder, Calendar, Award, User, AlertCircle, FilePlus
 } from 'lucide-react';
 
-const UserDashboard = ({ user, handleLogout }) => {
+const UserDashboard = ({ user, setView, handleLogout }) => {
   const [profile, setProfile] = useState(null);
   const [documents, setDocuments] = useState([]);
   const [title, setTitle] = useState('');
@@ -132,14 +132,17 @@ const UserDashboard = ({ user, handleLogout }) => {
       {/* Header Banner */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
         <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+          <button 
+            onClick={() => setView('landing')}
+            className="flex items-center gap-2.5 group cursor-pointer hover:opacity-80 transition-opacity focus:outline-none"
+          >
             <div className="p-2 rounded-xl bg-teal-brand text-white">
               <BookOpen size={20} className="stroke-[2.5]" />
             </div>
             <span className="font-bold text-xl tracking-tight text-gray-900">
               RankPilot <span className="text-teal-brand">Workspace</span>
             </span>
-          </div>
+          </button>
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-xl">

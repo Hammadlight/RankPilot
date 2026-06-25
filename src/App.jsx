@@ -121,11 +121,11 @@ function App() {
   }
 
   if (view === 'user-dashboard' && sessionUser) {
-    return <UserDashboard user={sessionUser} handleLogout={handleLogout} />;
+    return <UserDashboard user={sessionUser} setView={setView} handleLogout={handleLogout} />;
   }
 
   if (view === 'admin-dashboard' && sessionUser && userRole === 'admin') {
-    return <AdminDashboard user={sessionUser} handleLogout={handleLogout} />;
+    return <AdminDashboard user={sessionUser} setView={setView} handleLogout={handleLogout} />;
   }
 
   // Fallback to Landing page
